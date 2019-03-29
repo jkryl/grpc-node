@@ -1,14 +1,14 @@
 {
-  "name": "grpc",
-  "version": "1.24.0-pre1",
-  "author": "Google Inc.",
-  "description": "gRPC Library for Node",
+  "name": "grpc-uds",
+  "version": "0.1.0",
+  "author": "Jan Kryl & Google Inc.",
+  "description": "TEMPORARY and EXPERIMENTAL gRPC Library for Node supporting Unix Domain Sockets",
   "homepage": "https://grpc.io/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/grpc/grpc-node.git"
+    "url": "https://github.com/jkryl/grpc-node.git"
   },
-  "bugs": "https://github.com/grpc/grpc-node/issues",
+  "bugs": "https://github.com/jkryl/grpc-node/issues",
   "contributors": [
     {
       "name": "Michael Lumish",
@@ -19,20 +19,15 @@
     "lib": "src"
   },
   "scripts": {
-    "build": "node-pre-gyp build",
-    "electron-build": "node-pre-gyp configure build --runtime=electron --disturl=https://atom.io/download/atom-shell",
+    "build": "node-gyp build",
     "coverage": "istanbul cover ./node_modules/.bin/_mocha test",
-    "install": "node-pre-gyp install --fallback-to-build --library=static_library",
+    "install": "node-gyp install",
     "prepack": "git submodule update --init --recursive && npm install"
   },
-  "bundledDependencies": [
-    "node-pre-gyp"
-  ],
   "dependencies": {
     "lodash.camelcase": "^4.3.0",
     "lodash.clone": "^4.5.0",
     "nan": "^2.13.2",
-    "node-pre-gyp": "^0.13.0",
     "protobufjs": "^5.0.3"
   },
   "devDependencies": {
@@ -48,13 +43,6 @@
   },
   "engines": {
     "node": ">=4"
-  },
-  "binary": {
-    "module_name": "grpc_node",
-    "module_path": "src/node/extension_binary/{node_abi}-{platform}-{arch}-{libc}",
-    "host": "https://node-precompiled-binaries.grpc.io/",
-    "remote_path": "{name}/v{version}",
-    "package_name": "{node_abi}-{platform}-{arch}-{libc}.tar.gz"
   },
   "files": [
     "LICENSE",
