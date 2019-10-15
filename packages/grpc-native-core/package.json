@@ -1,6 +1,6 @@
 {
   "name": "grpc-uds",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Jan Kryl & Google Inc.",
   "description": "TEMPORARY and EXPERIMENTAL gRPC Library for Node supporting Unix Domain Sockets",
   "homepage": "https://grpc.io/",
@@ -19,9 +19,9 @@
     "lib": "src"
   },
   "scripts": {
-    "build": "node-gyp build",
+    "build": "node-gyp rebuild",
     "coverage": "istanbul cover ./node_modules/.bin/_mocha test",
-    "install": "node-gyp install",
+    "install": "node-gyp rebuild",
     "prepack": "git submodule update --init --recursive && npm install"
   },
   "dependencies": {
