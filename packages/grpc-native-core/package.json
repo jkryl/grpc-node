@@ -1,14 +1,14 @@
 {
-  "name": "grpc",
-  "version": "1.24.4",
-  "author": "Google Inc.",
-  "description": "gRPC Library for Node",
+  "name": "grpc-uds",
+  "version": "0.1.5",
+  "author": "Jan Kryl & Google Inc.",
+  "description": "TEMPORARY and EXPERIMENTAL gRPC Library for Node supporting Unix Domain Sockets",
   "homepage": "https://grpc.io/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/grpc/grpc-node.git"
+    "url": "https://github.com/jkryl/grpc-node.git"
   },
-  "bugs": "https://github.com/grpc/grpc-node/issues",
+  "bugs": "https://github.com/jkryl/grpc-node/issues",
   "contributors": [
     {
       "name": "Michael Lumish",
