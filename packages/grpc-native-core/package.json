@@ -1,6 +1,6 @@
 {
   "name": "grpc-uds",
-  "version": "0.1.4",
+  "version": "0.1.6",
   "author": "Jan Kryl & Google Inc.",
   "description": "TEMPORARY and EXPERIMENTAL gRPC Library for Node supporting Unix Domain Sockets",
   "homepage": "https://grpc.io/",
@@ -19,15 +19,20 @@
     "lib": "src"
   },
   "scripts": {
-    "build": "node-gyp rebuild",
+    "build": "node-pre-gyp build",
+    "electron-build": "node-pre-gyp configure build --runtime=electron --disturl=https://atom.io/download/atom-shell",
     "coverage": "istanbul cover ./node_modules/.bin/_mocha test",
-    "install": "node-gyp rebuild",
+    "install": "node-pre-gyp install --fallback-to-build --library=static_library",
     "prepack": "git submodule update --init --recursive && npm install"
   },
+  "bundledDependencies": [
+    "node-pre-gyp"
+  ],
   "dependencies": {
     "lodash.camelcase": "^4.3.0",
     "lodash.clone": "^4.5.0",
     "nan": "^2.13.2",
+    "node-pre-gyp": "^0.13.0",
     "protobufjs": "^5.0.3"
   },
   "devDependencies": {
@@ -43,6 +48,13 @@
   },
   "engines": {
     "node": ">=4"
+  },
+  "binary": {
+    "module_name": "grpc_node",
+    "module_path": "src/node/extension_binary/{node_abi}-{platform}-{arch}-{libc}",
+    "host": "https://github.com/jkryl/grpc-node/releases/download/",
+    "remote_path": "{version}",
+    "package_name": "{node_abi}-{platform}-{arch}-{libc}.tar.gz"
   },
   "files": [
     "LICENSE",
