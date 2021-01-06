@@ -29,7 +29,7 @@
     "@types/bytebuffer": "^5.0.40",
     "lodash.camelcase": "^4.3.0",
     "lodash.clone": "^4.5.0",
-    "nan": "^2.13.2",
+    "nan": "^2.14.2",
     "node-pre-gyp": "^0.16.0",
     "protobufjs": "^5.0.3"
   },
@@ -50,8 +50,8 @@
   "binary": {
     "module_name": "grpc_node",
     "module_path": "src/node/extension_binary/{node_abi}-{platform}-{arch}-{libc}",
-    "host": "https://node-precompiled-binaries.grpc.io/",
-    "remote_path": "{name}/v{version}",
+    "host": "https://github.com/jkryl/grpc-node/releases/download/",
+    "remote_path": "{version}",
     "package_name": "{node_abi}-{platform}-{arch}-{libc}.tar.gz"
   },
   "files": [
